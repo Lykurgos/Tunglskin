@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>sopp.jpeg</file>
+        <file>ddd.png</file>
+        <file>Tegning.svg</file>
+        <file>sirkel.svg</file>
+        <file>cache.svg</file>
+        <file>you.svg</file>
+    </qresource>
+</RCC>

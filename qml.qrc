@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>InfoElement.qml</file>
+        <file>Cache.qml</file>
+        <file>You.qml</file>
+        <file>FakeGps.qml</file>
+        <file>MyItem.qml</file>
+        <file>CacheHunt.qml</file>
+    </qresource>
+</RCC>
