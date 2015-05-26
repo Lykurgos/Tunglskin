@@ -1,16 +1,16 @@
 #include "UiCache.h"
-UiCache::UiCache(QQuickItem* parent):m_coordinate(59.000005,09.0),m_userCoordinate(0.0,0.0),QQuickItem(parent){
+UiCache::UiCache(QQuickItem* parent):m_coordinate(0.0,0.0),m_userCoordinate(0.0,0.0),QQuickItem(parent){
 }
 
-UiCache::UiCache():m_coordinate(59.000005,09.0),m_userCoordinate(0.0,0.0){
+UiCache::UiCache():m_coordinate(0.0,0.0),m_userCoordinate(0.0,0.0){
 }
+
 
 
 //property binding
 double UiCache::getDistance()
 {
-qDebug() << QString("read dist");
-     return m_distance;
+    return m_distance;
 }
 
 //property binding
@@ -70,8 +70,21 @@ void UiCache::setUserCoordinate(QVariant uc)
     if (m_userCoordinate!= uc.value<QGeoCoordinate>())
     {
         m_userCoordinate=  uc.value<QGeoCoordinate>();
-     }
-updatePos();
-//     qDebug() << "new uco set, lat: " << m_userCoordinate.latitude() << " long: " << m_userCoordinate.longitude() << "\n";
+    }
+    updatePos();
 }
 
+void UiCache::setCoordinate(double lat, double longi)
+{
+        m_coordinate.setLatitude(lat);
+        m_coordinate.setLongitude(longi);
+        updatePos();
+}
+void UiCache::setName(QString name){
+    m_name = name;
+    emit nameChanged();
+}
+
+QString UiCache::getName(){
+    return m_name;
+}

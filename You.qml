@@ -4,7 +4,7 @@ import QtPositioning 5.2
 Image {
 
     property variant coordinate:
-        QtPositioning.coordinate(59.00, 09.00)
+        QtPositioning.coordinate(0.00, 00.00)
     id: you1
     x: page.geoCentreX- (width/2)
     y: page.geoCentreY- (height/2)

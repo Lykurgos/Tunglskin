@@ -1,10 +1,6 @@
 import QtQuick 2.4
 import QtQuick.Window 2.2
 
-//hjemme: 59.64660, 09.63527
-//nære: 59.64659, 09.63530
-// <100m 59.64664, 09.63536
-//<1km 59.65060, 09.63656
 import QtMultimedia 5.0
 
 
@@ -13,14 +9,11 @@ Window {
     width: 800
     height: 600
 
-    Rectangle {
-        id: rectangle1
-        x: 0
-        y: 0
-        width: 800
-        height: 600
-        color: "#7f79e1"
+
+    MainMenu{
+
     }
+
 
     CacheHunt{
         id: cacheHunt
@@ -36,9 +29,36 @@ Window {
         width: 800
         height: 600
         signal switchState
-   // onClicked:{cacheHunt.visible = !cacheHunt.visible
+        onClicked:{
 
-}
+        switchState();
+
+        }
+
+    }
+
+
+
+    MouseArea{
+        height: parent.height /10
+        width: parent.width/10
+        x: parent.width - width
+        y: parent.height- height
+        id: backButton
+        objectName: "backButtonObject"
+        signal click
+        onClicked:{
+
+        click();
+
+        }
+        Rectangle{
+         height: parent.height
+         width: parent.width
+         color: "red"
+         z: -1
+        }
+    }
 
 }//end window
 

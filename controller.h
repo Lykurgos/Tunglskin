@@ -7,18 +7,17 @@ class Controller
 public:
     Controller(QQmlApplicationEngine &engine);
 
-    Q_PROPERTY(bool geoHunt READ getGeoHunt WRITE setGeoHunt NOTIFY geoHuntChanged);
-
-
-    bool handleStateChange();
 
     private:
-       QObject * rootObj;
+    QObject * rootObj;
     QObject * pClicker;
-    QState s1;
-    QState s2;
+    QObject * pGeoHuntObject;
+    QObject * pBackButtonObject;
 
-    QStateMachine machine;
+
+    QState* mainMenuState;
+    QState* geoHuntState;
+    QStateMachine *machine;
 };
 
 #endif // CONTROLLER_H

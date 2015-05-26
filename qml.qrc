@@ -7,5 +7,6 @@
         <file>FakeGps.qml</file>
         <file>MyItem.qml</file>
         <file>CacheHunt.qml</file>
+        <file>MainMenu.qml</file>
     </qresource>
 </RCC>
