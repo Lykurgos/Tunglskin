@@ -1,20 +1,23 @@
+/*
+Author: Fredrik Bakke, bakkefredrik@gmail.com
+Date: 8.6-2015
+License: GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+*/
 #include <QGuiApplication>
-//#include <QQmlApplicationEngine>
-//#include "geounit.h"
+
 #include "UiCache.h"
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQmlComponent>
 #include <QtQml>
-//#include <QGeoPositionInfoSource>
 #include "cacheFactory.h"
 #include "QQuickWindow"
 
 #include "controller.h"
 
-
 int main(int argc, char *argv[])
 {
+
 
     // geoUnit gu;
 
@@ -31,8 +34,11 @@ int main(int argc, char *argv[])
 
 
     //---------------generate caches-----------
-    CacheFactory factory(engine);
-    factory.doGenerateUiCaches();
+  //  CacheFactory factory(engine);
+   // factory.doGenerateUiCaches();
+
+
+
 
 
     /*

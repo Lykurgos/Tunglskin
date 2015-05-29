@@ -1,3 +1,8 @@
+/*
+Author: Fredrik Bakke, bakkefredrik@gmail.com
+Date: 8.6-2015
+License: GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+*/
 #include "UiCache.h"
 UiCache::UiCache(QQuickItem* parent):m_coordinate(0.0,0.0),m_userCoordinate(0.0,0.0),QQuickItem(parent){
 }

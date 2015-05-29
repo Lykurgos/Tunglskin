@@ -1,10 +1,15 @@
+/*
+Author: Fredrik Bakke, bakkefredrik@gmail.com
+Date: 8.6-2015
+License: GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+*/
 import QtQuick 2.0
 import QtPositioning 5.2
 
 Image {
 
     property variant coordinate:
-        QtPositioning.coordinate(0.00, 00.00)
+        QtPositioning.coordinate(59.582222, 9.6775)
     id: you1
     x: page.geoCentreX- (width/2)
     y: page.geoCentreY- (height/2)

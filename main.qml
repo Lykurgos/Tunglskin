@@ -1,3 +1,8 @@
+/*
+Author: Fredrik Bakke, bakkefredrik@gmail.com
+Date: 8.6-2015
+License: GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+*/
 import QtQuick 2.4
 import QtQuick.Window 2.2
 
@@ -11,7 +16,8 @@ Window {
 
 
     MainMenu{
-
+        id: mainMenu
+        objectName: "mainMenuObject"
     }
 
 
@@ -20,23 +26,6 @@ Window {
         objectName: "cacheHuntObject"
 
     }
-
-    MouseArea {
-        id: mouseArea1
-        objectName: "stateSwitchClicker"
-        x: 0
-        y: 0
-        width: 800
-        height: 600
-        signal switchState
-        onClicked:{
-
-        switchState();
-
-        }
-
-    }
-
 
 
     MouseArea{

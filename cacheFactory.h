@@ -1,7 +1,13 @@
+/*
+Author: Fredrik Bakke, bakkefredrik@gmail.com
+Date: 8.6-2015
+License: GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+*/
+
 #ifndef CACHEFACTORY_H
 #define CACHEFACTORY_H
 #include "UiCache.h"
-
+#include <algorithm>
 #include <QGeoCoordinate>
 #include <QQmlContext>
 #include <QQmlEngine>
@@ -9,6 +15,7 @@
 #include <QtQml>
 #include <vector>
 #include "DataCache.h"
+#include "GpxFile.h"
 
 #include <QtSql/QtSql>
 
@@ -26,6 +33,7 @@ private:
     void closeDataBase();
 
     QSqlDatabase m_db;
+    GpxFile m_gpxFile;
 };
 
 #endif // CACHEFACTORY_H

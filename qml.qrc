@@ -8,5 +8,7 @@
         <file>MyItem.qml</file>
         <file>CacheHunt.qml</file>
         <file>MainMenu.qml</file>
+        <file>CacheHuntSelect.qml</file>
+        <file>MainMenuButton.qml</file>
     </qresource>
 </RCC>

@@ -6,7 +6,8 @@ SOURCES += main.cpp \
     cacheFactory.cpp \
     UiCache.cpp \
     controller.cpp \
-    DataCache.cpp
+    DataCache.cpp \
+    GpxFile.cpp
 
 RESOURCES += qml.qrc \
     images.qrc
@@ -22,11 +23,11 @@ include(deployment.pri)
 DISTFILES += \
     ../../../../usr/share/icons/default/index.theme \
     ../../../../usr/share/icons/cab_view.png \
-    XmlLoader.qml \
     MainMenu.qml
 
 HEADERS += \
     cacheFactory.h \
     UiCache.h \
     controller.h \
-    DataCache.h
+    DataCache.h \
+    GpxFile.h

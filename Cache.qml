@@ -1,3 +1,8 @@
+/*
+Author: Fredrik Bakke, bakkefredrik@gmail.com
+Date: 8.6-2015
+License: GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+*/
 import QtQuick 2.4
 import QtPositioning 5.2
 import MyModules 1.1
@@ -42,7 +47,7 @@ CppCache  {
        if(input <=  1000){
            return Math.sqrt(input)*3.16227766  *(parent.width/100)/2
        }else{
-           return Math.sqrt(1100)*3.16227766  *(parent.width/100)/2         //caches out of range, shown on border
+           return Math.sqrt(1020)*3.16227766  *(parent.width/100)/2         //caches out of range, shown on border
        }
 
 
@@ -65,9 +70,9 @@ CppCache  {
     }
     function flipText(){
         if(angle > 180 || angle < 0){
-            return imageY + imageDiameter;
+            return imageY + 0.7*imageDiameter;
         }else{
-            return imageY - imageDiameter;
+            return imageY - 0.5*imageDiameter;
         }
     }
 }

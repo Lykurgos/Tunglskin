@@ -6,5 +6,7 @@
         <file>sirkel.svg</file>
         <file>cache.svg</file>
         <file>you.svg</file>
+        <file>geoHuntIcon.svg</file>
+        <file>avgCoordinateIcon.svg</file>
     </qresource>
 </RCC>
