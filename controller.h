@@ -14,16 +14,16 @@ License: GNU GENERAL PUBLIC LICENSE Version 2, June 1991
 public:
     Controller(QQmlApplicationEngine &engine);
     private:
-    QObject * rootObj;
+    QObject * pRootObj;
     QObject * pClicker;
     QObject * pGeoHuntObject;
     QObject * pBackButtonObject;
     QObject * pMainMenu;
     QObject * pMainMenuGrid;
 
-    QState* mainMenuState;
-    QState* geoHuntState;
-    QStateMachine *machine;
+    QState* pMainMenuState;
+    QState* pGeoHuntState;
+    QStateMachine * pMachine;
 };
 
 #endif // CONTROLLER_H

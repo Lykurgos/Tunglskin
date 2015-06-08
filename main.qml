@@ -18,6 +18,10 @@ Window {
     MainMenu{
         id: mainMenu
         objectName: "mainMenuObject"
+
+        //visible using states
+        visible: false
+        z: 0
     }
 
 
@@ -25,27 +29,36 @@ Window {
         id: cacheHunt
         objectName: "cacheHuntObject"
 
+        //visible using states
+        visible: false
+        z:0
+
+
     }
 
 
-    MouseArea{
+
+
+        Rectangle{
         height: parent.height /10
         width: parent.width/10
         x: parent.width - width
         y: parent.height- height
         id: backButton
-        objectName: "backButtonObject"
+
         signal click
-        onClicked:{
+        objectName: "backButtonObject"
+        color: "red"
 
-        click();
+        visible: false
+        z:0
 
-        }
-        Rectangle{
-         height: parent.height
-         width: parent.width
-         color: "red"
-         z: -1
+        MouseArea{
+            height: parent.height
+            width: parent.width
+            onClicked:{
+               parent.click();
+            }
         }
     }
 

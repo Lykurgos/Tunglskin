@@ -6,38 +6,57 @@ License: GNU GENERAL PUBLIC LICENSE Version 2, June 1991
 #include "controller.h"
 
 
-Controller::Controller(QQmlApplicationEngine &engine):rootObj(engine.rootObjects()[0]){
-    machine = new QStateMachine(&engine);
-    geoHuntState = new QState;
-    mainMenuState = new QState;
+Controller::Controller(QQmlApplicationEngine &engine):pRootObj(engine.rootObjects()[0]){
+    pMachine = new QStateMachine(&engine);
 
-    machine->setObjectName("stateMachineObject");
-    pClicker = rootObj->findChild<QObject*>("stateSwitchClicker");
-    pMainMenu = rootObj->findChild<QObject*>("mainMenuObject");
+    pMainMenuState = new QState();         //main menu
+    pGeoHuntState = new QState();
+
+
+
+
+
+    pMachine->setObjectName("stateMachineObject");
+    pClicker = pRootObj->findChild<QObject*>("stateSwitchClicker");
+    pMainMenu = pRootObj->findChild<QObject*>("mainMenuObject");
     pMainMenuGrid = pMainMenu->findChild<QObject*>("gridObject");
 
 
-    pGeoHuntObject= rootObj->findChild<QObject*>("cacheHuntObject");
+    pGeoHuntObject= pRootObj->findChild<QObject*>("cacheHuntObject");
 
-    pBackButtonObject = rootObj->findChild<QObject*>("backButtonObject");
-//default properties
+    pBackButtonObject = pRootObj->findChild<QObject*>("backButtonObject");
 
 
-    mainMenuState->assignProperty(pGeoHuntObject, "visible", false);
-    mainMenuState->assignProperty(pBackButtonObject, "visible", false);
+    //main menu properties
+    pMainMenuState->assignProperty(pMainMenu, "z", 1);
+    pMainMenuState->assignProperty(pMainMenu, "visible", true);
+    pMainMenuState->assignProperty(pGeoHuntObject, "visible", false);
+    pMainMenuState->assignProperty(pGeoHuntObject, "z", 0);
+    pMainMenuState->assignProperty(pBackButtonObject, "visible", false);
+    pMainMenuState->assignProperty(pBackButtonObject, "z", 0);
 
-    geoHuntState->assignProperty(pBackButtonObject, "visible", true);
-    geoHuntState->assignProperty(pGeoHuntObject, "visible", true);
 
-    geoHuntState->assignProperty(pGeoHuntObject, "z", 1);
+    //geo hunt properties
+    pGeoHuntState->assignProperty(pMainMenu, "z", 0);
+    pGeoHuntState->assignProperty(pMainMenu, "visible", false);
+    pGeoHuntState->assignProperty(pGeoHuntObject, "visible", true);
+    pGeoHuntState->assignProperty(pGeoHuntObject, "z", 1);
+    pGeoHuntState->assignProperty(pBackButtonObject, "visible", true);
+    pGeoHuntState->assignProperty(pBackButtonObject, "z", 1);
 
-    mainMenuState->addTransition(pMainMenuGrid->findChild<QObject*>("ghButton") , SIGNAL(clicked()), geoHuntState);
-    geoHuntState->addTransition(pBackButtonObject, SIGNAL(click()), mainMenuState);
 
-    machine->addState(mainMenuState);
-    machine->addState(geoHuntState);
-    machine->setInitialState(mainMenuState);
-    machine->start();
+    //transitions
+
+    pMainMenuState->addTransition(pMainMenuGrid->findChild<QObject*>("ghButton") , SIGNAL(clicked()), pGeoHuntState);
+    pGeoHuntState->addTransition(pBackButtonObject, SIGNAL(click()), pMainMenuState);
+
+
+    //init and start state machine
+
+    pMachine->addState(pMainMenuState);
+    pMachine->addState(pGeoHuntState);
+    pMachine->setInitialState(pMainMenuState);
+    pMachine->start();
 
 
 }

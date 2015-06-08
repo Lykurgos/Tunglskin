@@ -34,8 +34,8 @@ int main(int argc, char *argv[])
 
 
     //---------------generate caches-----------
-  //  CacheFactory factory(engine);
-   // factory.doGenerateUiCaches();
+    CacheFactory factory(engine);
+    factory.doGenerateUiCaches();
 
 
 
