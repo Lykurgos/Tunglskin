@@ -7,7 +7,9 @@ SOURCES += main.cpp \
     UiCache.cpp \
     controller.cpp \
     DataCache.cpp \
-    GpxFile.cpp
+    GpxFile.cpp \
+    geohuntsmodel.cpp \
+    SqlQueryModel.cpp
 
 RESOURCES += qml.qrc \
     images.qrc
@@ -30,4 +32,6 @@ HEADERS += \
     UiCache.h \
     controller.h \
     DataCache.h \
-    GpxFile.h
+    GpxFile.h \
+    geohuntsmodel.h \
+    SqlQueryModel.h

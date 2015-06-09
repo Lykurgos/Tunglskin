@@ -46,7 +46,6 @@ Controller::Controller(QQmlApplicationEngine &engine):pRootObj(engine.rootObject
 
 
     //transitions
-
     pMainMenuState->addTransition(pMainMenuGrid->findChild<QObject*>("ghButton") , SIGNAL(clicked()), pGeoHuntState);
     pGeoHuntState->addTransition(pBackButtonObject, SIGNAL(click()), pMainMenuState);
 
